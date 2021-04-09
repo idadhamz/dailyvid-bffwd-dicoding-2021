@@ -30,7 +30,7 @@ class ListCountries extends HTMLElement {
     this._countries.forEach((country) => {
       openList += `
       <div class="border border-gray-400 p-5 m-0 rounded-xl hover:bg-gray-200">
-          <h1 class="text-2xl font-bold sm:text-xl text-center">${country.name}</h1>
+          <h1 class="text-2xl font-bold sm:text-xl text-center">${country.name} (${country.iso2})</h1>
       </div>
       `
     })
