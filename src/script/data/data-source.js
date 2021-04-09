@@ -40,7 +40,6 @@ class DataSource {
         return response
       })
       .then((responseJson) => {
-        console.log(responseJson)
         if (responseJson.data) {
           return Promise.resolve(responseJson.data)
         } else {

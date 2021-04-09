@@ -1,10 +1,14 @@
 import DataSource from '../data/data-source.js'
 import '../component/hero-content.js'
-import '../component/countries-content.js'
+import '../component/list-countries.js'
+import '../component/search-bar.js'
+import '../component/countries-item.js'
 
 const main = () => {
   const heroElement = document.querySelector('hero-content')
-  const countriesContentElement = document.querySelector('countries-content')
+  const listCountriesElement = document.querySelector('list-countries')
+  const searchBar = document.querySelector('search-bar')
+  const countriesItemElement = document.querySelector('countries-item')
 
   // Get Indonesian Covid
   const getIndonesianCovid = async () => {
@@ -35,15 +39,35 @@ const main = () => {
   }
 
   const renderResult = (results) => {
-    countriesContentElement.countries = results
+    listCountriesElement.countries = results
   }
 
   const fallbackResult = (message) => {
-    countriesContentElement.renderError(message)
+    listCountriesElement.renderError(message)
+  }
+
+  // Get All Countries
+  const getDetailCountries = async () => {
+    try {
+      const result = await DataSource.selectCountries(searchBar.value)
+      renderDetailResult(result)
+    } catch (message) {
+      fallbacDetailkResult(message)
+    }
+  }
+
+  const renderDetailResult = (results) => {
+    countriesItemElement.country = results
+  }
+
+  const fallbacDetailkResult = (message) => {
+    countriesItemElement.renderError(message)
   }
 
   getIndonesianCovid()
   getAllCountries()
+
+  searchBar.clickEvent = getDetailCountries
 }
 
 export default main

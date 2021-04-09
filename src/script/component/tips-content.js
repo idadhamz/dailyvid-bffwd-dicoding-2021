@@ -9,13 +9,6 @@ class TipsContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section class="mx-5 my-10 sm:my-20 lg:mx-20 xl:mx-40">
-    <h1
-      class="text-xl font-semibold w-full leading-snug sm:leading-tight sm:text-2xl"
-    >
-      Tips Pencegahan Covid
-      <span class="text-red-700 font-bold">#DiDailyVid</span>
-    </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 my-10 sm:my-20">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex flex-col bg-gray-100 p-7 rounded-xl gap-4">
@@ -76,7 +69,6 @@ class TipsContent extends HTMLElement {
         </div>
       </div>
     </div>
-  </section>
       `
   }
 }
