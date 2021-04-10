@@ -16,7 +16,7 @@ class CountriesItem extends HTMLElement {
   }
 
   renderError(message) {
-    this.innerHTML += `<img
+    this.innerHTML = `<img
       src="../src/assets/images/dataNotFound.jpg"
       class="flex w-1/2 h-auto object-cover rounded-3xl m-auto"
       alt="hero image"
