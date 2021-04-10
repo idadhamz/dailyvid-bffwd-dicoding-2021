@@ -6,9 +6,7 @@ class DataSource {
   static indonesianCovid() {
     return axios
       .get(`${baseUrl}/countries/Indonesia`)
-      .then((response) => {
-        return response
-      })
+      .then((response) => response)
       .then((responseJson) => {
         if (responseJson.data) {
           return Promise.resolve(responseJson.data)
@@ -21,9 +19,7 @@ class DataSource {
   static dataCountries() {
     return axios
       .get(`${baseUrl}/countries`)
-      .then((response) => {
-        return response
-      })
+      .then((response) => response)
       .then((responseJson) => {
         if (responseJson.data.countries) {
           return Promise.resolve(responseJson.data.countries)
@@ -36,9 +32,7 @@ class DataSource {
   static selectCountries(country) {
     return axios
       .get(`${baseUrl}/countries/${country}`)
-      .then((response) => {
-        return response
-      })
+      .then((response) => response)
       .then((responseJson) => {
         if (responseJson.data) {
           return Promise.resolve(responseJson.data)

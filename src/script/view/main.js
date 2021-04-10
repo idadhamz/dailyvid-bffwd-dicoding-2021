@@ -49,7 +49,7 @@ const main = () => {
   // Get All Countries
   const getDetailCountries = async () => {
     try {
-      const result = await DataSource.selectCountries(searchBar.value)
+      const result = await DataSource.selectCountries(searchBar.value || null)
       renderDetailResult(result)
     } catch (message) {
       fallbacDetailkResult(message)
